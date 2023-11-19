@@ -1,0 +1,221 @@
+﻿<Window:RibbonWindow  xmlns:Window="urn:fluent-ribbon"
+        x:Class="VirtualParty.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirtualParty"
+        mc:Ignorable="d"
+        Title="虚拟派对" Icon="../img/sakura-party.png" x:Name="title" HorizontalAlignment="Left" Height="708" Width="1200" Background="#e9d6d6" 
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closed="Window_Closed">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="585"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Name="barragePanel" Background="Transparent" Panel.ZIndex="5" IsHitTestVisible="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Grid Grid.Row="0" Background="#fdf5f5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Name="settingPanel" Grid.Row="0" Background="LightGray">
+                    <StackPanel Orientation="Horizontal" Background="#fdf5f5" Margin="0 0 0.5 0.5">
+                        <Button Name="roomCreateBtn" Height="60" Width="60" Background="Transparent" BorderThickness="0" Click="RoomCreate_Click" Margin="30 0 0 0">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../img/adduser.png" Width="55" Height="55"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="roomJoinBtn" Height="60" Width="60" Background="Transparent" BorderThickness="0" Click="RoomJoin_Click" Margin="30 0 0 0">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../img/switchuser.png" Width="55" Height="55"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="settingBtn" Height="60" Width="60" Background="Transparent" BorderThickness="0" Click="Setting_Click" Margin="30 0 0 0">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../img/shezhi.png" Width="50" Height="50"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Border>
+                <Border Name="treeViewPanel" Grid.Row="1" Background="LightGray">
+                    <StackPanel Background="#fdf5f5" Margin="0 0 0.5 0">
+                        <TreeView Background="Transparent" BorderThickness="0" Margin="12 15 0 0" FontSize="20">
+                            <TreeViewItem IsExpanded="True" Name="MemberTreeView">
+                                <TreeViewItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="派对成员"/>
+                                    </StackPanel>
+                                </TreeViewItem.Header>
+                            </TreeViewItem>
+                            <TreeViewItem Name ="stepTreeView" Tag="0" Margin="0 15 0 0" IsExpanded="True">
+                                <TreeViewItem.Header>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="派对流程"/>
+                                        <Image Name="stepAddBtn" Source="../img/tianjia.png" Width="30" Height="30" MouseLeftButtonDown="StepAddBtn_Click" Margin="80 0 0 0"/>
+                                        <Image Name="stepRemoveBtn" Source="../img/yichu.png" Width="30" Height="30" MouseLeftButtonDown="StepRemoveBtn_Click" Margin="10 0 0 0"/>
+                                    </StackPanel>
+                                </TreeViewItem.Header>
+                            </TreeViewItem>
+                        </TreeView>
+                    </StackPanel>
+                </Border>
+                <Border Name="musicListPanel" Grid.Row="1" Background="LightGray" Visibility="Hidden">
+                    <StackPanel Background="#fdf5f5" Margin="0 0 0.5 0">
+                        <TreeView Background="Transparent" BorderThickness="0" Margin="12 15 0 0" FontSize="15">
+                            <TreeViewItem Header="当前流程歌曲" Name="musicListView" IsExpanded="True"/>
+                        </TreeView>
+                    </StackPanel>
+                </Border>
+                <Button Name="hiddenBtn" Grid.Row="1" Height="50" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="15" Visibility="Visible" Click="HiddenBtn_Click" Background="Transparent" BorderThickness="0">
+                    <Image Source="../img/xiangzuo.png"/>
+                </Button>
+                <Button Name="visibleBtn" Grid.Row="1" Height="50" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="15" Visibility="Hidden" Click="VisibleBtn_Click" Background="Transparent" BorderThickness="0">
+                    <Image Source="../img/xiangyou.png"/>
+                </Button>
+            </Grid>
+
+            <StackPanel Name="editPanel" Panel.ZIndex="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Height="55" Background="Transparent" Orientation="Horizontal" Visibility="Hidden">
+                <Button Name="pageEditBtn" Width="35" Height="35" VerticalAlignment="Top" Margin="10 10 0 0" Background="Transparent" BorderThickness="0" Click="PageEditBtn_Click">
+                    <Image Source="../img/bianji.png" Width="30" Height="30"/>
+                </Button>
+                <Button Name="musicAddBtn" Width="35" Height="35" VerticalAlignment="Top" Margin="10 10 0 0" Background="Transparent" BorderThickness="0" Click="MusicAddBtn_Click">
+                    <Image Source="../img/tiange.png" Width="31" Height="31"/>
+                </Button>
+                <Button Name="musicRemoveBtn" Width="35" Height="35" VerticalAlignment="Top" Margin="10 10 0 0" Background="Transparent" BorderThickness="0" Click="MusicRemoveBtn_Click">
+                    <Image Source="../img/shange.png" Width="30" Height="30"/>
+                </Button>
+                <Button Name="musicListBtn" Width="35" Height="35" VerticalAlignment="Top" Margin="10 10 0 0" Background="Transparent" BorderThickness="0" Click="MusicListBtn_Click">
+                    <Image Source="../img/gebiao.png" Width="29" Height="29"/>
+                </Button>
+                <Button Name="listChangeBtn" Width="35" Height="35" VerticalAlignment="Top" Margin="10 10 0 0" Background="Transparent" BorderThickness="0" Click="listChangeBtn_Click">
+                    <Image Source="../img/qiege.png" Width="26" Height="26"/>
+                </Button>
+            </StackPanel>
+
+            <ContentControl Name="soundPanel" Panel.ZIndex="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="185" Height="115" Visibility="Hidden"/>
+            <Grid Name="rightPanel" Grid.Column="1" Height="584.76" Width="900">
+                <Image Panel.ZIndex="0" Source="../img/paidui1.png" Opacity="0.4" Stretch="UniformToFill"/>
+                <ContentControl Name="displayPanel" Panel.ZIndex="1"/>
+                <Border Name="mediaPanel" Background="Black" Visibility="Hidden" Panel.ZIndex="2" Height="480" Width="800" Margin="0 50 0 0">
+                    <MediaElement Name="mediaElement" Volume="{Binding ElementName=volumeSlider,Path=Value }" Height="480" Width="800"/>
+                </Border>
+            </Grid>
+
+        </Grid>
+
+        <Grid Name="musicPlayPanel" Grid.Row="1" Background="#e9d6d6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Border Width="80" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image x:Name="musicCoverImg" Source="../img/yinyue.png"/>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="lastBtn" Grid.Column="0" Height="65" Width="65" Background="Transparent" BorderThickness="0" Click="MusicPlayBtn_Click">
+                    <Image Source="../img/shangyishou.png"/>
+                </Button>
+                <Button x:Name="stopBtn" Grid.Column="1" Height="65" Width="65" Background="Transparent" BorderThickness="0" Click="MusicPlayBtn_Click" Tag="true">
+                    <Image Name ="stopBtnImg" Source="../img/playCircle.png"/>
+                </Button>
+                <Button x:Name="nextBtn" Grid.Column="2" Height="65" Width="65" Background="Transparent" BorderThickness="0" Click="MusicPlayBtn_Click">
+                    <Image Source="../img/xiayishou.png"/>
+                </Button>
+
+            </Grid>
+
+            <Grid Name="sliderControlPanel" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Canvas Grid.Row="0" Margin="0 15 0 0" >
+                    <Label Name="musicName" HorizontalAlignment="Left" FontSize="20" Canvas.Left="15" Content="MusicTitle"/>
+                    <Label Name="nowTime" HorizontalContentAlignment="Right" FontSize="20" Canvas.Right="100" Content="00:00"/>
+                    <Label VerticalContentAlignment="Center" FontSize="20" Canvas.Right="90">/</Label>
+                    <Label Name="endTime" HorizontalContentAlignment="Right" FontSize="20" Canvas.Right="35" Content="00:00"/>
+                </Canvas>
+
+                <Slider x:Name="slider" Grid.Row="1" Margin=" 0 0 10 20" Width="600" LargeChange="10" Thumb.DragStarted="Slider_DragStarted" Thumb.DragCompleted="Slider_DragCompleted" PreviewMouseLeftButtonDown="Slider_PreviewMouseLeftButtonDown"/>
+            </Grid>
+
+            <Grid Name="barrageControlPanel" Grid.Column="2" Visibility="Hidden" Background="#e9d6d6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="56"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Canvas Grid.Row="0" Margin="20,10,20,0">
+                    <Button Background="Black" Height="25" Width="25" BorderThickness="0" Canvas.Top="10" Click="ColorChange_Click"/>
+                    <Button Background="LightPink" Height="25" Width="25" BorderThickness="0" Canvas.Top="10" Canvas.Left="35" Click="ColorChange_Click"/>
+                    <Button Background="MediumPurple" Height="25" Width="25" BorderThickness="0" Canvas.Top="10" Canvas.Left="70" Click="ColorChange_Click"/>
+                    <Button Background="BurlyWood" Height="25" Width="25" BorderThickness="0" Canvas.Top="10" Canvas.Left="105" Click="ColorChange_Click"/>
+                    <Button Background="LightCoral" Height="25" Width="25" BorderThickness="0" Canvas.Top="10" Canvas.Left="140" Click="ColorChange_Click"/>
+                    <Button Width="85" Height="33" FontSize="18" Content="发送弹幕" Canvas.Right="0" VerticalAlignment="Stretch" Margin="0,5,0,0" Click="BarrageSend_Click"/>
+                </Canvas>
+                <TextBox Name="barrageContent" Grid.Row="1" Margin="20,0,20,0" HorizontalAlignment="Stretch" Height="36" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="5 5 0 0">
+                    <Button Height="45" Width="45" Background="Transparent" BorderThickness="0" Click="Comment_Click" Margin="15 0 0 0">
+                        <Image Source="../img/comment.png" Width="40" Height="40"/>
+                    </Button>
+                    <Button Height="45" Width="45" Background="Transparent" BorderThickness="0" Click="Record_Click" Margin="10 0 0 0">
+                        <Image Source="../img/luyin.png" Width="40" Height="40"/>
+                    </Button>
+                    <Button Height="45" Width="45" Background="Transparent" BorderThickness="0" Click="Sound_Click" Margin="10 0 0 0">
+                        <Image Source="../img/yinxiao.png" Width="35" Height="35"/>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <Image Name="volumeImg" Source="../img/yinliang.png" Width="30" Height="30" Margin="5 0 0 0"/>
+                    <Slider Name="volumeSlider" Maximum="1" Value="0.2" Margin=" 5 5 0 0" Width="150" Height="25" LargeChange="0.1"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <MediaElement Name="recordElement" Visibility="Hidden" Volume="15"/>
+    </Grid>
+</Window:RibbonWindow>

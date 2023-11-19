@@ -1,0 +1,271 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="img\adduser.png" />
+    <None Remove="img\audiobook.png" />
+    <None Remove="img\back.png" />
+    <None Remove="img\bck_set.png" />
+    <None Remove="img\bianji.png" />
+    <None Remove="img\biaoqing.png" />
+    <None Remove="img\bishi.png" />
+    <None Remove="img\chazhao.png" />
+    <None Remove="img\chijing.png" />
+    <None Remove="img\clear.png" />
+    <None Remove="img\comment.png" />
+    <None Remove="img\cuocha.png" />
+    <None Remove="img\duigou.png" />
+    <None Remove="img\exit.png" />
+    <None Remove="img\file.png" />
+    <None Remove="img\filesearch.png" />
+    <None Remove="img\foldercreate.png" />
+    <None Remove="img\gebiao.png" />
+    <None Remove="img\jiantou.png" />
+    <None Remove="img\lead.png" />
+    <None Remove="img\liebiao.png" />
+    <None Remove="img\Lightmusic.png" />
+    <None Remove="img\logo.png" />
+    <None Remove="img\love.png" />
+    <None Remove="img\love_red.png" />
+    <None Remove="img\luyin.png" />
+    <None Remove="img\maimeng.png" />
+    <None Remove="img\muc_again.png" />
+    <None Remove="img\muc_last.png" />
+    <None Remove="img\muc_next.png" />
+    <None Remove="img\muc_order.png" />
+    <None Remove="img\muc_play.png" />
+    <None Remove="img\muc_random.png" />
+    <None Remove="img\muc_stop.png" />
+    <None Remove="img\music.png" />
+    <None Remove="img\numa.png" />
+    <None Remove="img\paidui1.png" />
+    <None Remove="img\paidui2.png" />
+    <None Remove="img\party.png" />
+    <None Remove="img\pauseCircle.png" />
+    <None Remove="img\playCircle.png" />
+    <None Remove="img\Portrait.png" />
+    <None Remove="img\qiege.png" />
+    <None Remove="img\qinqin.png" />
+    <None Remove="img\reback.png" />
+    <None Remove="img\sakura-party.png" />
+    <None Remove="img\set.png" />
+    <None Remove="img\shange.png" />
+    <None Remove="img\shangxin.png" />
+    <None Remove="img\shangyishou.png" />
+    <None Remove="img\shezhi.png" />
+    <None Remove="img\size_H.png" />
+    <None Remove="img\size_L.png" />
+    <None Remove="img\switchuser.png" />
+    <None Remove="img\tiange.png" />
+    <None Remove="img\tianjia.png" />
+    <None Remove="img\touzi1.png" />
+    <None Remove="img\touzi2.png" />
+    <None Remove="img\touzi3.png" />
+    <None Remove="img\touzi4.png" />
+    <None Remove="img\touzi5.png" />
+    <None Remove="img\touzi6.png" />
+    <None Remove="img\volume.png" />
+    <None Remove="img\xiangyou.png" />
+    <None Remove="img\xiangzuo.png" />
+    <None Remove="img\xiayishou.png" />
+    <None Remove="img\yichu.png" />
+    <None Remove="img\yinliang.png" />
+    <None Remove="img\yinxiao.png" />
+    <None Remove="img\yinyue.png" />
+    <None Remove="sound\0.wav" />
+    <None Remove="sound\1.wav" />
+    <None Remove="sound\2.wav" />
+    <None Remove="sound\3.wav" />
+    <None Remove="sound\4.wav" />
+    <None Remove="sound\5.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EasyNetQ" Version="6.5.2" />
+    <PackageReference Include="Fluent.Ribbon" Version="9.0.4" />
+    <PackageReference Include="NAudio" Version="2.1.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
+    <PackageReference Include="TagLib.Portable" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\adduser.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\bianji.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\biaoqing.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\bishi.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\chazhao.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\chijing.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\comment.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\cuocha.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\duigou.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\filesearch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\foldercreate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\gebiao.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\jiantou.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\liebiao.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\luyin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\maimeng.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\numa.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\paidui1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\paidui2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\party.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\pauseCircle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\playCircle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\Portrait.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\qiege.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\qinqin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\sakura-party.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\shange.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\shangxin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\shangyishou.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\shezhi.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\switchuser.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\tiange.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\tianjia.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\touzi1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\touzi2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\touzi3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\touzi4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\touzi5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\touzi6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\xiangyou.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\xiangzuo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\xiayishou.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\yichu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\yinliang.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\yinxiao.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\yinyue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="sound\0.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="sound\1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="sound\2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="sound\3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="sound\4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="sound\5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

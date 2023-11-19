@@ -1,0 +1,31 @@
+﻿<Window:RibbonWindow  xmlns:Window="urn:fluent-ribbon"
+        x:Class="VirtualParty.MusicRemoveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirtualParty"
+        mc:Ignorable="d"
+        Title="删除媒体" Height="286" Width="400" Background="#e9d6d6" Icon="../img/sakura-party.png"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Grid.RowSpan="3" Source="../img/paidui1.png" Opacity="0.4" Stretch="UniformToFill"/>
+        <Label Grid.Row="0" Content="请选择歌曲：" VerticalContentAlignment="Center" FontSize="15" Margin="5 0 0 0"/>
+        <ListBox Name="content" Grid.Row="1" FontSize="15" Margin="10 0 10 0" SelectedIndex="0"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button FontSize="12" Height="20" Width="35" Margin="0 0 10 0" Click="Confirm_Click">
+                <Image Source="../img/duigou.png"/>
+            </Button>
+            <Button FontSize="12" Height="20" Width="35" Margin="0 0 10 0" Click="Cancel_Click">
+                <Image Source="../img/cuocha.png"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window:RibbonWindow>
